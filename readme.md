@@ -13,3 +13,5 @@
 第二步:切换到开发页面
 
 第三步:单机插件
+
+![image](https://github.com/Jackllllll/self-devlelop-qr-chrome/blob/master/img/console.png)
