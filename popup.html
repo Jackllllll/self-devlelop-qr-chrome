@@ -1,69 +1,89 @@
+<!--
+ * @Date: 2021-08-13 21:43:32
+ * @Author: zb.lin
+ * @Email: lin302010@qq.com
+ * @LastEditTime: 2021-08-14 07:39:51
+-->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>popup</title>
-    <style>
-      .project-title {
-        margin: 20px auto;
-        font-size: 24px;
-        font-weight: bold;
-      }
-      .project-module-item {
-        padding: 10px 0;
-      }
-      #qrcode,
-      #taburl {
-        margin-top: 20px;
-      }
-      input[name="change-modue-input"] {
-        width: 700px;
-        display: block;
-        height: 30px;
-      }
-      .to-change {
-        background-color: #4caf50;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body style="width: 800px; min-height: 100px">
-    <h2>外部 wap 唤起 APP webview</h2>
-    <div class="module-1">
-      <h5>// 孕育：</h5>
-      <div class="lightproxy">
-        当前页面url - 是否添加参数<br />
-        lightproxy=true
-        <input type="radio" name="lightproxy" value="true" checked="checked" />
-        是 <input type="radio" name="lightproxy" value="false" /> 否
-      </div>
-      <div class="environment">
-        环境入口<br />
-        <input type="radio" name="environment" value="true" checked="checked" />
-        H5 <input type="radio" name="environment" value="false" /> 孕育APP
-      </div>
-      <div class="change-module">
-        <label for="change-modue-input"></label>
-        <input type="text" name="change-modue-input" />
-        <button class="to-change">生成</button>
-      </div>
-      <div id="qrcode"></div>
-      <!-- 项目展示 -->
-      <div class="project"></div>
+
+<head>
+  <meta charset="utf-8" />
+  <title>popup</title>
+  <style>
+    .project-title {
+      margin: 20px auto;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .project-module-item {
+      padding: 10px 0;
+    }
+
+    #qrcode,
+    #taburl {
+      margin-top: 20px;
+    }
+
+    input[name="change-modue-input"] {
+      width: 700px;
+      display: block;
+      height: 30px;
+    }
+
+    .to-change {
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .add-query {}
+  </style>
+</head>
+
+<body style="width: 800px; min-height: 100px">
+  <h2>外部 wap 唤起 APP webview</h2>
+  <div class="module-1">
+    <h5>// 孕育：</h5>
+    <div class="lightproxy">
+      当前页面url - 是否添加参数<br />
+      lightproxy=true
+      <input type="radio" name="lightproxy" value="true" checked="checked" />
+      是 <input type="radio" name="lightproxy" value="false" /> 否
     </div>
-    <script src="project.js"></script>
-    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="uri.js"></script>
-    <script type="text/javascript" src="lodash.min.js"></script>
-    <script type="text/javascript" src="qrcode.min.js"></script>
-    <script type="text/javascript" src="popup.js"></script>
-  </body>
+    <div class="environment">
+      环境入口<br />
+      <input type="radio" name="environment" value="true" checked="checked" />
+      H5 <input type="radio" name="environment" value="false" /> 孕育APP
+    </div>
+    <div class="change-module">
+      <label for="change-modue-input"></label>
+      <input type="text" name="change-modue-input" />
+
+    </div>
+    <div class="query-module">
+      <button class="add-query">添加query参数</button>
+
+    </div>
+    <!-- <button class="to-change">生成</button> -->
+    <div id="qrcode"></div>
+    <!-- 项目展示 -->
+    <div class="project"></div>
+  </div>
+  <script src="project.js"></script>
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="uri.js"></script>
+  <script type="text/javascript" src="lodash.min.js"></script>
+  <script type="text/javascript" src="qrcode.min.js"></script>
+  <script type="text/javascript" src="popup.js"></script>
+</body>
+
 </html>

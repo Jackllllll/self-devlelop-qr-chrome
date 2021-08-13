@@ -40,6 +40,7 @@ function projectToHtml(project) {
 function setUrl(url, domId) {
   this.uri = new Uri(url) || "";
   this.domId = domId || "qrcode";
+  this.inputBox = $("[name='change-modue-input']");
   this.qrcode = null;
   this.H5 = true;
   this.appUrlBase = "https://app.mama.cn/soft_link/pt?type=666&url="; //孕育app 打开H5入口
@@ -55,10 +56,12 @@ setUrl.prototype.toURLString = function () {
 };
 setUrl.prototype.addQueryParam = function (key, value) {
   this.uri = this.uri.addQueryParam(key, value);
+  this.inputBox.val(this.toURLString());
   return this;
 };
 setUrl.prototype.deleteQueryParam = function (key) {
   this.uri = this.uri.deleteQueryParam(key);
+  this.inputBox.val(this.toURLString());
   return this;
 };
 setUrl.prototype.setAppUrl = function () {
@@ -82,6 +85,7 @@ setUrl.prototype.setMMAppQRcode = function () {
   }
   return this;
 };
+
 function init(url) {
   projectToHtml(project);
   //初始化
@@ -110,19 +114,46 @@ function init(url) {
     }
     setUrlObject.setMMAppQRcode();
   });
+
   function sendMail() {
     const changeUrl = $("[name='change-modue-input']").val();
 
     setUrlObject.uri = new Uri(changeUrl);
-
     setUrlObject.setMMAppQRcode();
   }
-  $("[name='change-modue-input']").change(
+  $("[name='change-modue-input']").keyup(
     _.debounce(sendMail, 300, {
-      leading: true,
-      trailing: false,
+      leading: false,
+      trailing: true,
     })
   );
+  $('.add-query').click(function () {
+    const htmlTemplate = `<div class="query-module-item">
+    <input type="text" name="query-module-key" />
+    <input type="text" name="query-module-value" />
+    <button class="add">ADD</button>
+    <button class="close">X</button>
+  </div>`
+    $(this).parent().append(htmlTemplate)
+    callback()
+  });
+
+  function callback() {
+    $('.close').click(function (e) {
+      const key = $(this).siblings("input[name='query-module-key']").val();
+      setUrlObject.deleteQueryParam(key)
+      setUrlObject.setMMAppQRcode();
+      $(this).parent().remove();
+
+    });
+    $('.add').click(function () {
+      const key = $(this).siblings("input[name='query-module-key']").val();
+      const value = $(this).siblings("input[name='query-module-value']").val();
+      setUrlObject.addQueryParam(key, value)
+      setUrlObject.setMMAppQRcode();
+    });
+  }
+
   $(".to-change").click(function () {
     const changeUrl = $("[name='change-modue-input']").val();
 
