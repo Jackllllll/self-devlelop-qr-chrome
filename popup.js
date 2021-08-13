@@ -110,6 +110,19 @@ function init(url) {
     }
     setUrlObject.setMMAppQRcode();
   });
+  function sendMail() {
+    const changeUrl = $("[name='change-modue-input']").val();
+
+    setUrlObject.uri = new Uri(changeUrl);
+
+    setUrlObject.setMMAppQRcode();
+  }
+  $("[name='change-modue-input']").change(
+    _.debounce(sendMail, 300, {
+      leading: true,
+      trailing: false,
+    })
+  );
   $(".to-change").click(function () {
     const changeUrl = $("[name='change-modue-input']").val();
 
