@@ -1,6 +1,10 @@
 const project = {
   act: [
     {
+      name: "专题-优蓝-榜单展示",
+      url: "https://act.mama.cn/subject/index-id-youlan2108.html",
+    },
+    {
       name: "专题-安儿乐-七夕爆柠CP撒糖节",
       url: "http://act.mama.cn/subject/index-id-anerleqixi2021.html#/",
     },
