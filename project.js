@@ -27,7 +27,11 @@ const project = {
   ],
   bbmamacn: [
     {
-      name: "邀亲亲友-接受邀亲页",
+      name: "邀亲亲友-接受邀亲页shared",
+      url: "http://bb.mama.cn/wap/yqhuodong?phone=17875511996&uid=108920001&source=5&link_code=CFF682427AC14C8DEE9EB15A0078CBA9&tkey=1632817282&uni_code=19e16d5d#/shared",
+    },
+    {
+      name: "邀亲亲友-接受邀亲页sharec",
       url: "http://bb.mama.cn/wap/yqhuodong?link_code=64DD6AF0F29EECC3DF066E3B193E9535&tkey=1629082126&uni_code=41b8c5e2&uid=106537132&bid=647446&babyname=%E6%9B%BE%E7%BB%8F%E8%AE%A4%E5%8F%AF&relation_id=23&username=%E6%88%91%E6%98%AF%E6%9C%A8%E9%B1%BC&source=5#/sharec",
     },
     {
