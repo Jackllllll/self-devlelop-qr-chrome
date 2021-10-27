@@ -1,6 +1,18 @@
 const project = {
   act: [
     {
+      name: "专题-品牌狂欢日",
+      url: "http://act.mama.cn/subject/index-id-brandcarnival2111.html",
+    },
+    {
+      name: "专题-非凡成长智营榜",
+      url: "http://act.mama.cn/subject/index-id-supergrow2021.html",
+    },
+    {
+      name: "专题-2021双11种草季",
+      url: "http://act.mama.cn/subject/index-id-double11day2021.html",
+    },
+    {
       name: "专题-立乐家公益节活动",
       url: "http://act.mama.cn/subject/index-id-libaimanual2108.html",
     },
